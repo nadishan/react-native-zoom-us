@@ -70,6 +70,7 @@ RCT_EXPORT_METHOD(
     BOOL initializeSuc = [[MobileRTC sharedRTC] initialize:context];
     [[[MobileRTC sharedRTC] getMeetingSettings]
       disableShowVideoPreviewWhenJoinMeeting:settings[@"disableShowVideoPreviewWhenJoinMeeting"]];
+    [[MobileRTC sharedRTC] getMeetingSettings].meetingInviteHidden = YES;
 
     MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
     if (authService)
