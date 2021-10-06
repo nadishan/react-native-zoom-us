@@ -71,6 +71,11 @@ RCT_EXPORT_METHOD(
     [[[MobileRTC sharedRTC] getMeetingSettings]
       disableShowVideoPreviewWhenJoinMeeting:settings[@"disableShowVideoPreviewWhenJoinMeeting"]];
 
+    MobileRTCMeetingSettings *ms = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (ms) {
+      ms.topBarHidden = true;
+    }  
+
     MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
     if (authService)
     {
